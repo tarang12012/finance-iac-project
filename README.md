@@ -37,7 +37,7 @@ The main objectives of this project are:
 
 The deployment workflow is as follows:
 
-Developer → GitHub Repository → GitHub Actions → DockerHub → Terraform → AWS Infrastructure → EC2 → Docker Container → Finance Application
+![Architecture Diagram](docs/architecture-diagram.png)
 
 ---
 
