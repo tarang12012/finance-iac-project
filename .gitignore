@@ -1,0 +1,20 @@
+# Terraform folders
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# Executables
+*.exe
+
+# Keys
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
