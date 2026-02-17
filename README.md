@@ -37,7 +37,9 @@ The main objectives of this project are:
 
 The deployment workflow is as follows:
 
-![Architecture Diagram](docs/architecture-diagram.png)
+<p align="center">
+  <img src="architecture.png" width="600">
+</p>
 
 ---
 
