@@ -16,6 +16,7 @@ resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.finance_vpc.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
+  availability_zone       = "ap-south-1a"
 
   tags = {
     Name = "Finance-Public-Subnet"
@@ -84,6 +85,8 @@ resource "aws_instance" "Finance-App-Server" {
 
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.finance_sg.id]
+  associate_public_ip_address = true
+
 
   user_data = <<-EOF
               #!/bin/bash
@@ -92,7 +95,8 @@ resource "aws_instance" "Finance-App-Server" {
               service docker start
               usermod -a -G docker ec2-user
               docker pull purohittarang42/finance-app
-              docker run -d -p 80:5000 purohittarang42/finance-app
+              docker run -d --restart always -p 80:8000 purohittarang42/finance-app
+
               EOF
 
   tags = {
