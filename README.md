@@ -82,35 +82,8 @@ The Finance application is developed using Djnago (Python).
 
 ---
 
-## 7. Application Screenshots
 
-### 7.1 Login and Registration
-
-<p align="center">
-  <img src="Login.png" width="45%" height="405">
-  <img src="Register.png" width="45%" height="299">
-</p>
-
----
-
-### 7.2 Expense and Income Dashboard 
-
-<p align="center">
-  <img src="Expense Dashboard.png" width="45%" height="405">
-  <img src="Income Dashboard.png" width="45%" height="299">
-</p>
-
----
-
-### 7.3 Expense and Income Summary
-<p align="center">
-  <img src="Expense Summary.png" width="45%" height="405">
-  <img src="Income Summary.png" width="45%" height="299">
-</p>
-
----
-
-## 8. Containerization
+## 7. Containerization
 
 The application is containerized using Docker.
 
@@ -127,7 +100,7 @@ EC2 Port 80 → Container Port 5000
 
 ---
 
-## 9. CI/CD Implementation
+## 8. CI/CD Implementation
 
 Continuous Integration and Continuous Deployment are implemented using GitHub Actions.
 
@@ -146,7 +119,7 @@ This ensures automatic deployment without manual intervention.
 
 ---
 
-## 10. Security Considerations
+## 9. Security Considerations
 
 - AWS credentials are stored securely in GitHub Secrets.
 - Docker credentials are stored securely in GitHub Secrets.
@@ -155,9 +128,9 @@ This ensures automatic deployment without manual intervention.
 
 ---
 
-## 11. Deployment Instructions
+## 10. Deployment Instructions
 
-### 11.1 Local Application Execution
+### 10.1 Local Application Execution
 
 Using Python:
 cd app
@@ -174,7 +147,7 @@ docker run -p 5000:5000 finance-app
 
 ---
 
-### 11.2 Infrastructure Deployment Using Terraform
+### 10.2 Infrastructure Deployment Using Terraform
 cd terraform
 
 terraform init
@@ -186,7 +159,7 @@ This provisions the AWS infrastructure and deploys the application automatically
 
 ---
 
-## 12. Output
+## 11. Output
 
 After successful deployment, the application can be accessed via:
 
@@ -194,11 +167,35 @@ http://43.205.211.208
 
 The application displays:
 
-Finance System API is Running
+### 11.1 Login and Registration
+
+<p align="center">
+  <img src="Login.png" width="45%" height="405">
+  <img src="Register.png" width="45%" height="299">
+</p>
 
 ---
 
-## 13. Conclusion
+### 11.2 Expense and Income Dashboard 
+
+<p align="center">
+  <img src="Expense Dashboard.png" width="45%" height="405">
+  <img src="Income Dashboard.png" width="45%" height="299">
+</p>
+
+---
+
+### 11.3 Expense and Income Summary
+<p align="center">
+  <img src="Expense Summary.png" width="45%" height="405">
+  <img src="Income Summary.png" width="45%" height="299">
+</p>
+
+---
+
+---
+
+## 12. Conclusion
 
 This project demonstrates the practical implementation of:
 
