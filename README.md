@@ -193,8 +193,6 @@ The application displays:
 
 ---
 
----
-
 ## 12. Conclusion
 
 This project demonstrates the practical implementation of:
