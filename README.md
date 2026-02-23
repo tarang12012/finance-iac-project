@@ -88,8 +88,28 @@ The Finance application is developed using Djnago (Python).
 <p align="center">
   <img src="Login.png" width="600">
 </p>
+
+<p align="center">
+  <img src="Register.png" width="600">
+</p>
+
 ### 7.2 Expense and Income Dashboard 
+<p align="center">
+  <img src="Expense Dashboard.png" width="600">
+</p>
+
+<p align="center">
+  <img src="Income Dashboard" width="600">
+</p>
+
 ### 7.3 Expense and Income Summary
+<p align="center">
+  <img src="Expense Summary.png" width="600">
+</p>
+
+<p align="center">
+  <img src="Income Summary.png" width="600">
+</p>
 
 ## 7. Containerization
 
