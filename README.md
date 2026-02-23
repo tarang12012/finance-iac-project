@@ -85,33 +85,32 @@ The Finance application is developed using Djnago (Python).
 ## 7. Application Screenshots
 
 ### 7.1 Login and Registration
-<p align="center">
-  <img src="Login.png" width="600">
-</p>
 
 <p align="center">
-  <img src="Register.png" width="600">
+  <img src="Login.png" width="45%" height="405">
+  <img src="Register.png" width="45%" height="299">
 </p>
+
+---
 
 ### 7.2 Expense and Income Dashboard 
-<p align="center">
-  <img src="Expense Dashboard.png" width="600">
-</p>
 
 <p align="center">
-  <img src="Income Dashboard" width="600">
+  <img src="Expense Dashboard.png" width="45%" height="405">
+  <img src="Income Dashboard.png" width="45%" height="299">
 </p>
+
+---
 
 ### 7.3 Expense and Income Summary
 <p align="center">
-  <img src="Expense Summary.png" width="600">
+  <img src="Expense Summary.png" width="45%" height="405">
+  <img src="Income Summary.png" width="45%" height="299">
 </p>
 
-<p align="center">
-  <img src="Income Summary.png" width="600">
-</p>
+---
 
-## 7. Containerization
+## 8. Containerization
 
 The application is containerized using Docker.
 
@@ -128,7 +127,7 @@ EC2 Port 80 → Container Port 5000
 
 ---
 
-## 8. CI/CD Implementation
+## 9. CI/CD Implementation
 
 Continuous Integration and Continuous Deployment are implemented using GitHub Actions.
 
@@ -147,7 +146,7 @@ This ensures automatic deployment without manual intervention.
 
 ---
 
-## 9. Security Considerations
+## 10. Security Considerations
 
 - AWS credentials are stored securely in GitHub Secrets.
 - Docker credentials are stored securely in GitHub Secrets.
