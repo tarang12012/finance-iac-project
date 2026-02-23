@@ -74,13 +74,19 @@ The infrastructure is provisioned using Terraform and includes:
 
 ## 6. Application Layer
 
-The Finance application is developed using Flask (Python).
+The Finance application is developed using Djnago (Python).
 
 - The application runs on port 5000 inside the container.
 - It is exposed on port 80 of the EC2 instance.
 
 
 ---
+
+## 7. Application Screenshots
+
+### 7.1 Login and Registration
+### 7.2 Expense and Income Dashboard 
+### 7.3 Expense and Income Summary
 
 ## 7. Containerization
 
