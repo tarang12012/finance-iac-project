@@ -186,7 +186,7 @@ The application displays:
 ### 11.1 Login and Registration
 
 <p align="center">
-  <img src="Login.png" width="45%" height="405">
+  <img src="Login.png" width="45%" height="500">
   <img src="Register.png" width="45%" height="299">
 </p>
 
