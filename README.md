@@ -38,7 +38,7 @@ The main objectives of this project are:
 The deployment workflow is as follows:
 
 <p align="center">
-  <img src="architecture.png" width="600">
+  <img src="images/architecture.png" width="600">
 </p>
 
 ---
@@ -71,10 +71,10 @@ The infrastructure is provisioned using Terraform and includes:
 - Finance application container deployed automatically
 
   <div align="center">
-  <img src="ec2.png" width="48%" 
+  <img src="images/ec2.png" width="48%" 
        style="vertical-align: top; margin-right:20px;">
   
-  <img src="instance.png" width="48%" 
+  <img src="images/instance.png" width="48%" 
        style="vertical-align: top;">
 </div>
 
@@ -107,10 +107,10 @@ Port Mapping:
 EC2 Port 80 → Container Port 8000
 
 <div align="center">
-  <img src="docker1.png" width="48%" 
+  <img src="images/docker1.png" width="48%" 
        style="vertical-align: top; margin-right:20px;">
   
-  <img src="docker2.png" width="48%" 
+  <img src="images/docker2.png" width="48%" 
        style="vertical-align: top;">
 </div>
 
@@ -186,8 +186,8 @@ The application displays:
 ### 11.1 Login and Registration
 
 <p align="center">
-  <img src="Login.png" width="45%" height="500">
-  <img src="Register.png" width="45%" height="299">
+  <img src="images/Login.png" width="45%" height="500">
+  <img src="images/Register.png" width="45%" height="299">
 </p>
 
 ---
@@ -195,16 +195,16 @@ The application displays:
 ### 11.2 Expense and Income Dashboard 
 
 <p align="center">
-  <img src="Expense Dashboard.png" width="45%" height="405">
-  <img src="Income Dashboard.png" width="45%" height="299">
+  <img src="images/Expense Dashboard.png" width="45%" height="405">
+  <img src="images/Income Dashboard.png" width="45%" height="299">
 </p>
 
 ---
 
 ### 11.3 Expense and Income Summary
 <p align="center">
-  <img src="Expense Summary.png" width="45%" height="405">
-  <img src="Income Summary.png" width="45%" height="299">
+  <img src="images/Expense Summary.png" width="45%" height="405">
+  <img src="images/Income Summary.png" width="45%" height="299">
 </p>
 
 ---
