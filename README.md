@@ -70,13 +70,21 @@ The infrastructure is provisioned using Terraform and includes:
 - Docker installed automatically using user-data script
 - Finance application container deployed automatically
 
+  <div align="center">
+  <img src="ec2.png" width="48%" 
+       style="vertical-align: top; margin-right:20px;">
+  
+  <img src="instance.png" width="48%" 
+       style="vertical-align: top;">
+</div>
+
 ---
 
 ## 6. Application Layer
 
 The Finance application is developed using Djnago (Python).
 
-- The application runs on port 5000 inside the container.
+- The application runs on port 8000 inside the container.
 - It is exposed on port 80 of the EC2 instance.
 
 
@@ -92,11 +100,19 @@ Dockerfile performs the following steps:
 - Uses official Python base image
 - Copies application code
 - Installs required dependencies
-- Exposes port 5000
+- Exposes port 8000
 - Runs the application
 
 Port Mapping:
-EC2 Port 80 → Container Port 5000
+EC2 Port 80 → Container Port 8000
+
+<div align="center">
+  <img src="docker1.png" width="48%" 
+       style="vertical-align: top; margin-right:20px;">
+  
+  <img src="docker2.png" width="48%" 
+       style="vertical-align: top;">
+</div>
 
 ---
 
@@ -138,12 +154,12 @@ pip install -r requirements.txt
 python app.py
 
 Access at:
-http://localhost:5000
+http://localhost:8000
 
 Using Docker:
 cd app
 docker build -t finance-app .
-docker run -p 5000:5000 finance-app
+docker run -p 8000:8000 finance-app
 
 ---
 
