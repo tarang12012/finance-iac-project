@@ -104,7 +104,7 @@ resource "aws_instance" "Finance-App-Server" {
               service docker start
               usermod -a -G docker ec2-user
               docker pull purohittarang42/finance-app
-              docker run -d --restart always -p 80:8000 purohittarang42/finance-app
+              docker run -d -p 80:5000 purohittarang42/finance-app
 
               EOF
 

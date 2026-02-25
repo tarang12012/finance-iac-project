@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/stats.css' %}" />
+
+<div class="container mt-4">
+  <h2 class="mb-4">Income Summary Dashboard</h2>
+
+
+  <div class="row text-center mb-4">
+    <div class="col-md-3 stat-box income">
+      <h5>Total Income</h5>
+      <p>₹{{ total_income }}</p>
+    </div>
+    <div class="col-md-3 stat-box income">
+      <h5>Average Income</h5>
+      <p>₹{{ average_income }}</p>
+    </div>
+    <div class="col-md-3 stat-box income">
+      <h5>Income This Month</h5>
+      <p>₹{{ income_this_month }}</p>
+    </div>
+    <div class="col-md-3 stat-box income">
+      <h5>Top Source</h5>
+      <p>{{ top_source }}</p>
+    </div>
+  </div>
+
+
+  <div class="card p-3 mb-4">
+    <h5 class="mb-3">Recent Income Entries</h5>
+    <ul class="list-group">
+      {% for income in recent_income %}
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>{{ income.source }}</strong> - ₹{{ income.amount }}<br />
+          <small>{{ income.description }}</small>
+        </div>
+        <span>{{ income.date }}</span>
+      </li>
+      {% empty %}
+      <li class="list-group-item text-muted">No income records yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <div class="card p-3">
+    <h5 class="mb-3">Income Sources - Pie Chart</h5>
+    <div style="max-width: 400px; margin: auto">
+      <canvas id="incomeChart" width="300" height="300"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("{% url 'income_category_summary' %}")
+      .then((res) => res.json())
+      .then((data) => {
+        const ctx = document.getElementById("incomeChart").getContext("2d");
+        new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: Object.keys(data.income_source_data),
+            datasets: [
+              {
+                label: "Last 6 Months Income by Source",
+                data: Object.values(data.income_source_data),
+                backgroundColor: [
+                  "rgba(54, 162, 235, 0.6)",
+                  "rgba(255, 206, 86, 0.6)",
+                  "rgba(75, 192, 192, 0.6)",
+                  "rgba(153, 102, 255, 0.6)",
+                  "rgba(255, 159, 64, 0.6)",
+                ],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+              title: {
+                display: true,
+                text: "Income Distribution by Source",
+              },
+            },
+          },
+        });
+      });
+  });
+</script>
+{% endblock %}

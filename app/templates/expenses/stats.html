@@ -1,0 +1,118 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container mt-4">
+  <!-- Header -->
+  <h2 class="mb-4">Expense Summary</h2>
+
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>Total Spent</h5>
+          <h3>₹{{ total_spent }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>Avg Monthly Spend</h5>
+          <h3>₹{{ avg_monthly_spend }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5>Monthly Trend</h5>
+      <canvas id="monthlyTrendChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5>Category Distribution</h5>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Highest Category</h6>
+          {% if top_category.category %}
+          <p>{{ top_category.category }} — ₹{{ top_category.total }}</p>
+          {% elif top_category.category == None %}
+          <p>No data</p>
+          {% else %}
+          <p>{{ top_category.category }} — ₹{{ top_category.total }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5>Recent Transactions</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for expense in recent_expenses %}
+          <tr>
+            <td>{{ expense.date }}</td>
+            <td>{{ expense.category }}</td>
+            <td>₹{{ expense.amount }}</td>
+            <td>{{ expense.description }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/stats.js' %}"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("{% url 'monthly_trend' %}")
+      .then((res) => res.json())
+      .then((data) => {
+        const ctx = document
+          .getElementById("monthlyTrendChart")
+          .getContext("2d");
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: data.labels,
+            datasets: [
+              {
+                label: "Monthly Expenses",
+                data: data.data,
+                borderColor: "rgba(75, 192, 192, 1)",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                tension: 0.3,
+                fill: true,
+              },
+            ],
+          },
+        });
+      });
+  });
+</script>
+{% endblock %}

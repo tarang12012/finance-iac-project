@@ -1,20 +1,40 @@
-# Terraform folders
+
+# Terraform
 terraform/.terraform/
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/*.tfstate
 terraform/*.tfstate.*
+.terraform/
+*.tfstate
+*.tfstate.*
+
 
 # Executables
 *.exe
 
-# Keys
+# SSH Keys
 *.pem
 
-# Python
+# Python / Django
 __pycache__/
-*.pyc
+*.py[cod]
+*.log
+*.sqlite3
+db.sqlite3
 
-# OS
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Environment Variables
+.env
+
+# Django specific
+staticfiles/
+media/
+
+# OS files
 .DS_Store
 Thumbs.db

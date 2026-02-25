@@ -1,0 +1,73 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <div class="card mt-5 px-2">
+      <div class="card-body">
+        <div class="card-title text-center mt-2 mb-3">
+          <h4>Register for Free Account</h4>
+        </div>
+
+        <form action="{% url 'register' %}" method="post">
+          {% csrf_token %}
+          {% include 'partials/_messages.html' %}
+
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              name="username"
+              id="usernameField"
+              placeholder="Username"
+              class="form-control"
+              value="{{ fieldValues.username }}"
+            />
+            <div class="invalid-feedback invalid_feedback" style="display: none;"></div>
+          </div>
+
+          <div class="form-group mb-3">
+            <input
+              type="email"
+              name="email"
+              id="emailField"
+              placeholder="Email"
+              class="form-control"
+              value="{{ fieldValues.email }}"
+            />
+            <div class="invalid-feedback emailFeedBackArea" style="display: none;"></div>
+          </div>
+
+          <div class="form-group mb-3">
+            <input
+              type="password"
+              name="password"
+              id="passwordField"
+              placeholder="Password"
+              class="form-control"
+            />
+          </div>
+          
+          <div class="form-group mb-3 text-end">
+            <small class="showPasswordToggle" style="cursor: pointer; color: #0d6efd;">SHOW</small>
+          </div>
+
+          <div class="form-group d-grid">
+            <input
+              type="submit"
+              value="Register"
+              class="btn btn-primary"
+            />
+          </div>
+        </form>
+
+        <div class="text-center mt-3">
+          <span>Already have an account? </span><a href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
